@@ -22,9 +22,9 @@ class TransactionalEmails extends Base
     public function getEmails($page = 1, $perPage = 10)
     {
         $client = new Client(array(
-            'method'      => Client::METHOD_GET,
-            'url'         => $this->config->getApiUrl('transactional-emails'),
-            'paramsGet'   => array(
+            'method'    => Client::METHOD_GET,
+            'url'       => $this->config->getApiUrl('transactional-emails'),
+            'paramsGet' => array(
                 'page'     => (int)$page,
                 'per_page' => (int)$perPage
             ),
@@ -43,9 +43,9 @@ class TransactionalEmails extends Base
     public function getEmail($emailUid)
     {
         $client = new Client(array(
-            'method'      => Client::METHOD_GET,
-            'url'         => $this->config->getApiUrl(sprintf('transactional-emails/%s', (string)$emailUid)),
-            'paramsGet'   => array(),
+            'method'    => Client::METHOD_GET,
+            'url'       => $this->config->getApiUrl(sprintf('transactional-emails/%s', (string)$emailUid)),
+            'paramsGet' => array(),
         ));
 
         return $response = $client->request();
