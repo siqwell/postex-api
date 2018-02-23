@@ -2,5 +2,5 @@
 
 #INSTALL
 ```
-composer require siqwell/postex
+composer require siqwell/postex-api
 ```
