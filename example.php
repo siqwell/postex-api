@@ -14,7 +14,11 @@ try {
 
     /** @var \Postex\Http\Response $response */
     $response = $endpoint->create($listUid, [
-        'EMAIL' => 'test' . mt_rand(0, 123456) . '@test.com',
+        'EMAIL'   => 'test' . mt_rand(0, 123456) . '@test.com',
+        'details' => [
+            'status'     => 'confirmed',
+            'ip_address' => $_SERVER['REMOTE_ADDR']
+        ],
     ]);
 
     print_r($response->body);
